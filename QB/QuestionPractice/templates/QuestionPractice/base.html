@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'QuestionPractice/css/bootstrap.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <h2 class="text-center mb-4 text-muted">Question Bank</h2>
+            {% block content %}        
+            {% endblock %}
+        </div>
+    </div>
+    
+    
+<script src="{% static 'QuestionPractice/js/jquery.js' %}"></script>
+<script src="{% static 'QuestionPractice/js/popper.js' %}"></script>
+<script src="{% static 'QuestionPractice/js/bootstrap.js' %}"></script>
+</body>
+</html>

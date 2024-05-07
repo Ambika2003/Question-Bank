@@ -1,0 +1,31 @@
+{% extends "QuestionPractice/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">MCQ Question</h3>
+                <form  action='{% url "mcq_question" %}' method="POST">
+                    {% csrf_token %}
+                    {% for question in questions %}
+                    <div class="form-group">
+                        
+                        {% comment %} <label for="question{{ question.id }}">Question {{ question.id }}:</label> {% endcomment %}
+                        <p>{{ question.question_text }}</p>
+                        <div class="form-group">
+                            <select class="form-control" id="answer{{ question.id }}" name="answer{{ question.id }}">
+                                {% for option in question.option_set.all %}
+                                <option value="{{ option.id }}">{{ option.text }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-sm btn-info">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

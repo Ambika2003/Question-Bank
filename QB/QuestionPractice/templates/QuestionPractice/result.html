@@ -1,0 +1,17 @@
+{% extends "QuestionPractice/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+               
+                <h3 class="card-title">MCQ Result</h3>
+                {%  csrf_token %}
+                <p>Your total marks: {{ total_marks }}</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
